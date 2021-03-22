@@ -21,7 +21,7 @@ Some requirements for this project were the followings:
     - Get route prices.
 2. Create a small user interface to query a list of flights from a departure on a specific date and show the results in a table.
 3. Create a database on your favourite relational database : Preferred Postgre or SQL Server.
-4. Develop the solution using Spring but you can’t use SpringBoot.
+4. Use SpringBoot and configure Embedded Tomcat Application.
 5. Use SpringMVC/JSP , to handle the user interface.
 6. Deploy the solution into one of the following servers : Tomcat, Glassfish , JBoss.
 7. Use Functional Programming as much as possible.
