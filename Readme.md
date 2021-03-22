@@ -39,5 +39,5 @@ Some requirements for this project were the followings:
 ### How to run it locally. 
 - Have maven and jdk and PostgreSql setup in you machine. 
 - Set up the password for PostgreSql as `123456` you can change this from the `db.properties` file. 
-- In order to make it easier to run it locally I added the `tomcat7-maven-plugin`. So to start the app locally is as simple as running the command `mvn tomcat7:run`. 
+- To run this project from terminal you can run `mvn spring-boot:run`
 - There's a postman collection you can import to your insomia/postman.
