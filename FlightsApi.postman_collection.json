@@ -1,0 +1,421 @@
+{
+	"info": {
+		"_postman_id": "58c93b55-da49-4003-ab46-0851912d6a9b",
+		"name": "FlightsApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get City by IATA code",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/city/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"city",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a flight",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYxMjI2MTM5NSwiaWF0IjoxNjEyMjI1Mzk1fQ._x7tCJB4B60HIO5JXr8LOuRI0R26cgyzXcYk5_EEBBc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"flightNumber\": null,\r\n    \"departureCity\": {\r\n        \"iataCode\": \"BRC\",\r\n        \"name\": \"Barcelona\"\r\n    },\r\n    \"destinationCity\": {\r\n        \"iataCode\": \"PTG\",\r\n        \"name\": \"Portugal\"\r\n    },\r\n    \"scheduledDepartureDateTime\": \"Mon, 19 Apr 2015 22:59:26 IST\",\r\n    \"estimatedDepartureDateTime\": \"Mon, 13 Apr 2015 22:59:26 IST\",\r\n    \"airline\": \"United Airlines\",\r\n    \"airlineCode\": \"United\",\r\n    \"gate\": 1,\r\n    \"status\": \"DELAYED\",\r\n    \"price\": [\r\n        {\r\n            \"id\": null,\r\n            \"firstClass\": 99.99,\r\n            \"economy\": 59.99,\r\n            \"economyPlus\": 69.99\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/flight/new/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flight",
+						"new",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get flight by date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/flight/?scheduledDepartureDateTime=2015-04-19",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flight",
+						""
+					],
+					"query": [
+						{
+							"key": "scheduledDepartureDateTime",
+							"value": "2015-04-19"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Flight by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/flight/?flightNumber=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flight",
+						""
+					],
+					"query": [
+						{
+							"key": "flightNumber",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Flights FromDestination By Date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/flight/?destinationIataCode=PTG&scheduledDepartureDateTime=2015-04-19",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flight",
+						""
+					],
+					"query": [
+						{
+							"key": "destinationIataCode",
+							"value": "PTG"
+						},
+						{
+							"key": "scheduledDepartureDateTime",
+							"value": "2015-04-19"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get specific city",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/city/BRC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"city",
+						"BRC"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Flights by Airline and Date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/flight/?airline=United Airlines&scheduledDepartureDateTime=2020-12-11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flight",
+						""
+					],
+					"query": [
+						{
+							"key": "airline",
+							"value": "United Airlines"
+						},
+						{
+							"key": "scheduledDepartureDateTime",
+							"value": "2020-12-11"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Flights by Departure and By date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/flight/?departureIataCode=BRC&scheduledDepartureDateTime=2020-12-11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flight",
+						""
+					],
+					"query": [
+						{
+							"key": "departureIataCode",
+							"value": "BRC"
+						},
+						{
+							"key": "scheduledDepartureDateTime",
+							"value": "2020-12-11"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get JWT token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Flight Price by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/flight/price/?flightNumber=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flight",
+						"price",
+						""
+					],
+					"query": [
+						{
+							"key": "flightNumber",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add price for a route",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYxMjI2MTM5NSwiaWF0IjoxNjEyMjI1Mzk1fQ._x7tCJB4B60HIO5JXr8LOuRI0R26cgyzXcYk5_EEBBc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstClass\": 23.99,\r\n    \"economy\": 200.99,\r\n    \"economyPlus\": 39.99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/flight/price/?flightNumber=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flight",
+						"price",
+						""
+					],
+					"query": [
+						{
+							"key": "flightNumber",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update price for a route",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYxMjI2MTM5NSwiaWF0IjoxNjEyMjI1Mzk1fQ._x7tCJB4B60HIO5JXr8LOuRI0R26cgyzXcYk5_EEBBc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstClass\": 200.99,\r\n    \"economy\": 200.99,\r\n    \"economyPlus\": 200.99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/flight/price/?flightNumber=1&priceId=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flight",
+						"price",
+						""
+					],
+					"query": [
+						{
+							"key": "flightNumber",
+							"value": "1"
+						},
+						{
+							"key": "priceId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove price for a route",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYxMjI2MTM5NSwiaWF0IjoxNjEyMjI1Mzk1fQ._x7tCJB4B60HIO5JXr8LOuRI0R26cgyzXcYk5_EEBBc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/flight/price/?flightNumber=1&priceId=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flight",
+						"price",
+						""
+					],
+					"query": [
+						{
+							"key": "flightNumber",
+							"value": "1"
+						},
+						{
+							"key": "priceId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

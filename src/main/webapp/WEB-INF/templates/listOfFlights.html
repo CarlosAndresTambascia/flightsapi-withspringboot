@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Flights</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/styles.css" th:href="@{/css/styles.css}"/>
+</head>
+<body>
+<table class="container">
+    <thead>
+    <tr>
+        <th><h1>Flight Number</h1></th>
+        <th><h1>Departure IC</h1></th>
+        <th><h1>Departure name</h1></th>
+        <th><h1>Destination IC</h1></th>
+        <th><h1>Destination name</h1></th>
+        <th><h1>Scheduled Departure Date</h1></th>
+        <th><h1>Estimated Departure Date</h1></th>
+        <th><h1>Airline</h1></th>
+        <th><h1>Airline Code</h1></th>
+        <th><h1>Gate</h1></th>
+        <th><h1>Economy Price</h1></th>
+        <th><h1>Economy Plus Price</h1></th>
+        <th><h1>First Class Price</h1></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="flights : ${flightsFound}">
+        <td th:text="${flights?.flightNumber}"></td>
+        <td th:text="${flights?.departureCity?.iataCode}"></td>
+        <td th:text="${flights?.departureCity?.name}"></td>
+        <td th:text="${flights?.destinationCity?.iataCode}"></td>
+        <td th:text="${flights?.destinationCity?.name}"></td>
+        <td th:text="${flights?.scheduledDepartureDateTime}"></td>
+        <td th:text="${flights?.estimatedDepartureDateTime}"></td>
+        <td th:text="${flights?.airline}"></td>
+        <td th:text="${flights?.gate}"></td>
+        <td th:text="${flights?.status}"></td>
+        <td th:text="${flights?.price?.get(0)?.getEconomy()}"></td>
+        <td th:text="${flights?.price?.get(0)?.getEconomyPlus()}"></td>
+        <td th:text="${flights?.price?.get(0)?.getFirstClass()}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
