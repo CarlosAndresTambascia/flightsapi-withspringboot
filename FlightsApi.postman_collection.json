@@ -416,6 +416,34 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "List flights by date and show it in table",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/flight/view/?scheduledDepartureDateTime=2015-04-19",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flight",
+						"view",
+						""
+					],
+					"query": [
+						{
+							"key": "scheduledDepartureDateTime",
+							"value": "2015-04-19"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
