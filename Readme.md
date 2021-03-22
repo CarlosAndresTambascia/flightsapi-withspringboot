@@ -1,6 +1,8 @@
 # Spring boot Application:
 This is the second variant of the same project. You can see the first variant of this project [here](https://github.com/CarlosAndresTambascia/flightsapi) using Spring MVC instead of SpringBoot.
 
+[![CircleCI](https://circleci.com/gh/CarlosAndresTambascia/flightsapi-withspringboot.svg?style=svg&circle-token=e75326b2701feca13cdd865e220d88c026b9b422)](https://circleci.com/gh/CarlosAndresTambascia/flightsapi-withspringboot)
+
 ### The project 
 
 The idea of this application is to develop an api for flights.
